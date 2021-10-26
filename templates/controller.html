@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Control the Robot :</h1>
+    <br><br>
+
+    <style>
+        #controller {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #lcr {
+            align-self: center;
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+
+    <div id="controller">
+        <div id="lcr">
+            <div id="c-land" class="mb-3">
+                <form method="POST" id="controllerLand">
+                    <input type="submit" class="btn btn-secondary" id="land" aria-describedby="landHelp" value="Land"
+                        name="direction">
+                </form>
+            </div>
+            <div id="c-takeoff" class="mb-3">
+                <form method="POST" id="controllerTakeoff">
+                    <input type="submit" class="btn btn-secondary" id="takeoff" aria-describedby="takeoffHelp"
+                        value="Takeoff" name="direction">
+                </form>
+            </div>
+            <div id="c-flip" class="mb-3">
+                <form method="POST" id="controllerFlip">
+                    <input type="submit" class="btn btn-secondary" id="flip" aria-describedby="flipHelp" value="Flip"
+                        name="direction">
+                </form>
+            </div>
+            <div id="c-clockwise" class="mb-3">
+                <form method="POST" id="controllerClockwise">
+                    <input type="submit" class="btn btn-secondary" id="clockwise" aria-describedby="clockwiseHelp"
+                        value="Clockwise" name="direction">
+                </form>
+            </div>
+        </div>
+        <div id="lcr">
+            <div id="c-front" class="mb-3">
+                <form method="POST" id="controllerForward">
+                    <input type="submit" class="btn btn-secondary" id="forward" aria-describedby="forwardHelp"
+                        value="Forward" name="direction">
+                </form>
+            </div>
+            <div id="c-left" class="mb-3">
+                <form method="POST" id="controllerLeft">
+                    <input type="submit" class="btn btn-secondary" id="left" aria-describedby="leftHelp" value="Left"
+                        name="direction">
+                </form>
+            </div>
+            <div id="c-right" class="mb-3">
+                <form method="POST" id="controllerRight">
+                    <input type="submit" class="btn btn-secondary" id="right" aria-describedby="rightHelp" value="Right"
+                        name="direction">
+                </form>
+            </div>
+            <div id="c-back" class="mb-3">
+                <form method="POST" id="controllerBackward">
+                    <input type="submit" class="btn btn-secondary" id="backward" aria-describedby="backwardHelp"
+                        value="Backward" name="direction">
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

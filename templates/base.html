@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>
+    {% block title %}GENERIC TITLE{% endblock %}
+  </title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">TelloDrone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ url_for('index')}}">
+              Home <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('controller') }}">
+              Controller
+            </a>
+          </li>
+      </div>
+    </div>
+  </nav>
+
+  <br>
+  {% block content %}
+
+  {% endblock %}
+</body>
+<!--Jquery Cdn -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  $(document).on('submit', '#controllerTakeoff', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/controller',
+      data: {
+        direction: $("#takeoff").val()
+      }
+    })
+  });
+
+  $(document).on('submit', '#controllerLand', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/controller',
+      data: {
+        direction: $("#land").val()
+      }
+    })
+  });
+
+  $(document).on('submit', '#controllerFlip', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/controller',
+      data: {
+        direction: $("#flip").val()
+      }
+    })
+  });
+
+  $(document).on('submit', '#controllerClockwise', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/controller',
+      data: {
+        direction: $("#clockwise").val()
+      }
+    })
+  });
+
+  $(document).on('submit', '#controllerForward', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/controller',
+      data: {
+        direction: $("#forward").val()
+      }
+    })
+  });
+
+  $(document).on('submit', '#controllerLeft', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/controller',
+      data: {
+        direction: $("#left").val()
+      }
+    })
+  });
+
+  $(document).on('submit', '#controllerRight', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/controller',
+      data: {
+        direction: $("#right").val()
+      }
+    })
+  });
+
+  $(document).on('submit', '#controllerBackward', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/controller',
+      data: {
+        direction: $("#backward").val()
+      }
+    })
+  });
+</script>
+
+
+</html>
