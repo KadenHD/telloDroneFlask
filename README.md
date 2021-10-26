@@ -16,6 +16,6 @@
 
 > Python, HTML, JavaScript
 
-*** Les Frameworks :***
+***Les Frameworks :***
 
 > Flask
